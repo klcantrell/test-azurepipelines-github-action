@@ -4,5 +4,7 @@ pool:
   vmImage: macos-11
 
 steps:
-- script: echo "$(message)"
-  displayName: 'Show passed in variables'
+- script: echo "$secret_message"
+  displayName: 'Show secret variable'
+  env:
+    secret_message: $(SECRET_MESSAGE)
