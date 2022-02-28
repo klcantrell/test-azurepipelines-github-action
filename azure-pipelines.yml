@@ -11,10 +11,8 @@ steps:
   displayName: 'Checkout main branch'
 
 - script: |
-    echo "$secret_message" >> messages.txt
+    echo "$github_message" >> messages.txt
   displayName: 'Show secret variable'
-  env:
-    secret_message: $(SECRET_MESSAGE)
 
 - script: |
     git add messages.txt

@@ -7,9 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: Azure/pipelines@v1
+      - uses: Azure/pipelines@v1.2
         with:
           azure-devops-project-url: 'https://dev.azure.com/cantrellkalalau/cantrellkalalau'
           azure-pipeline-name: 'klcantrell.test-azurepipelines-github-action'
           azure-devops-token: '${{ secrets.AZURE_DEVOPS_TOKEN }}'
-          # azure-pipeline-variables: '{"message": "HI!"}' # this is an ignored parameter for now https://github.com/Azure/pipelines/issues/40
+          azure-pipeline-variables: '{"github_message": "Hello from GitHub!"}'
