@@ -7,6 +7,9 @@ steps:
 - checkout: self
   persistCredentials: true
 
+- script: git checkout main
+  displayName: 'Checkout main branch'
+
 - script: |
     echo "$secret_message" >> messages.txt
   displayName: 'Show secret variable'
