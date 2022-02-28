@@ -4,7 +4,17 @@ pool:
   vmImage: macos-11
 
 steps:
-- script: echo "$secret_message"
+- checkout: self
+  persistCredentials: true
+
+- script: |
+    echo "$secret_message" >> messages.txt
   displayName: 'Show secret variable'
   env:
     secret_message: $(SECRET_MESSAGE)
+
+- script: |
+    git add messages.txt
+    git commit -m "Update messages.txt [skip ci]"
+    git push
+  displayName: 'Update messages'
